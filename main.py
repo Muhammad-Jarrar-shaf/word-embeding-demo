@@ -1,12 +1,26 @@
 from app.embedding_service import EmbeddingService
+from app.visualization import visualize_embeddings
 
 service = EmbeddingService()
 
-word = "king"
+words = [
+    "king",
+    "queen",
+    "prince",
+    "princess",
+    "man",
+    "woman",
+    "dog",
+    "cat",
+    "lion",
+    "tiger",
+    "python",
+    "java",
+    "linux",
+    "computer",
+    "internet"
+]
 
-results = service.get_similar_words(word)
+output_file = visualize_embeddings(service, words)
 
-print(f"\nWords similar to '{word}':")
-
-for similar_word, score in results:
-    print(f"{similar_word}: {score:.4f}")
+print(f"Visualization saved to: {output_file}")
