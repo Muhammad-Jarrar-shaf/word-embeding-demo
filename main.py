@@ -1,3 +1,4 @@
+from app.api import app
 from app.embedding_service import EmbeddingService
 from app.visualization import visualize_embeddings
 
